@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Header from "./components/Header"
-import MenuLateral from './Componets/SideBar/Menu/MenuLateral'
+import MenuLateral from './components/SideBar/Menu/MenuLateral'
 import 'tailwindcss/tailwind.css';
 
 
@@ -9,7 +9,7 @@ function App() {
   console.log(toggleMenu)
   return (
     <div>
-      <div><Header toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} /></div>
+      <Header toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
       <div className="flex">
         <div><MenuLateral /></div>
         <div className="flex-1 p-10">
