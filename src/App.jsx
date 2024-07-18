@@ -1,13 +1,13 @@
-import './App.css'
+import { useState } from "react"
+import Header from "./components/Header"
 
 function App() {
+  const [toggleMenu, setToggleMenu] = useState(false)
+  console.log(toggleMenu)
 
   return (
     <>
-    <h1 className="text-xl font-bold underline font-inter">
-      Hello world!
-    </h1>
-       
+      <Header toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
     </>
   )
 }
