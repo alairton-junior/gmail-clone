@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const MenuItem = ({ label, icon, number, bold, selected, onClick }) => {
+const MenuItem = ({ label, icon, number, bold, selected, onClick, collapsed }) => {
   return (
     <div
       className={`flex items-center px-4 py-3 cursor-pointer text-gray-700 ${
@@ -9,8 +9,12 @@ const MenuItem = ({ label, icon, number, bold, selected, onClick }) => {
       onClick={onClick}
     >
       <span className="mr-3 ml-5">{icon}</span>
-      <span className={`flex-1 ${bold ? 'font-bold' : ''}`}>{label}</span>
-      {number && <span className="font-bold">{number}</span>}
+      {!collapsed && (
+        <>
+          <span className={`flex-1 ${bold ? 'font-bold' : ''}`}>{label}</span>
+          {number && <span className="font-bold">{number}</span>}
+        </>
+      )}
     </div>
   );
 };
@@ -22,6 +26,7 @@ MenuItem.propTypes = {
   selected: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   bold: PropTypes.bool,
+  collapsed: PropTypes.bool.isRequired,
 };
 
 export default MenuItem;

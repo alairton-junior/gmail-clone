@@ -2,7 +2,8 @@ import { useState } from 'react';
 import MenuItem from './MenuItem';
 import MarcadoresLateral from '../Marcadores/MarcadoresLateral';
 
-const MenuLateral = () => {
+// eslint-disable-next-line react/prop-types
+const MenuLateral = ({ toggleMenu }) => {
     const [selectedItem, setSelectedItem] = useState('null');
 
     const menuItems = [
@@ -72,19 +73,20 @@ const MenuLateral = () => {
     };
 
   return (
-    <div className="w-[355px] h-screen bg-white">
-      {menuItems.map((item, index) => (
-        <MenuItem
-          key={index}
-          label={item.label}
-          icon={item.icon}
-          number={item.number} // Passa o número para o MenuItem
-          bold={item.bold}
-          selected={selectedItem === index}
-          onClick={() => handleMenuItemClick(index)}
-        />
-      ))}
-      <MarcadoresLateral />
+    <div className={`h-screen bg-white ${toggleMenu ? 'w-20' : 'w-80'}`}>
+        {menuItems.map((item, index) => (
+            <MenuItem
+            key={index}
+            label={item.label}
+            icon={item.icon}
+            number={item.number} // Passa o número para o MenuItem
+            bold={item.bold}
+            selected={selectedItem === index}
+            onClick={() => handleMenuItemClick(index)}
+            collapsed={toggleMenu}
+            />
+        ))}
+        <MarcadoresLateral toggleMenu={toggleMenu} />
     </div>
   );
 };

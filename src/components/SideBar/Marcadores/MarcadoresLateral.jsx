@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import MenuItem from './MenuItemMacadores';
 
-const MenuLateral = () => {
+// eslint-disable-next-line react/prop-types
+const MenuLateral = ({toggleMenu}) => {
   const [selectedItem, setSelectedItem] = useState('null');
 
 const menuItems = [
@@ -55,9 +56,11 @@ const handleMenuItemClick = (index) => {
 };
 
   return (
-    <div className="w-[355px] mt-[70px] h-screen bg-white">
+    <div className={`h-screen bg-white ${toggleMenu ? 'w-20' : 'w-80'}`}>
         <div className='flex justify-between ml-9 mr-3'>
-            <p className='text-xl font-medium'>Labels</p>
+        {!toggleMenu && (
+          <p className='text-xl font-medium'>Labels</p>
+        )}
             <button className='w-[33px] h-[30px] p-0 bg-white hover:bg-blue-100' ><svg width="30" height="30" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.125 24.25V16.75H6.875V14.25H15.125V6.75H17.875V14.25H26.125V16.75H17.875V24.25H15.125Z" fill="#1C1B1F" fillOpacity="0.72"/>
             </svg>
@@ -72,6 +75,7 @@ const handleMenuItemClick = (index) => {
           bold={item.bold}
           selected={selectedItem === index}
           onClick={() => handleMenuItemClick(index)}
+          collapsed={toggleMenu}
         />
       ))}
     </div>
