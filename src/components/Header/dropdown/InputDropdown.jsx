@@ -1,40 +1,40 @@
-import { useEffect, useState } from "react"
-import PropTypes from "prop-types"
+import { useState } from "react"
 import { IconCheck } from "../../../assets/icons"
+import PropTypes from "prop-types"
 
 function InputDropdown({ isFocus }) {
   const data = ["Has attachment", "Last 7 days", "From me"]
   const [checked, setChecked] = useState([...Array(data.length).fill(false)])
 
-  function defocus(index) {
-    checked[index] = !checked[index]
-
-    // setChecked((prevChecked) =>
-    //   prevChecked.map((item, i) => (i === index ? !item : item))
-    // )
+  function buttonCheck(index) {
+    setChecked((arrayButtom) =>
+      arrayButtom.map((buttom, i) => (i === index ? !buttom : buttom))
+    )
   }
-
-  // useEffect(() => {
-  //   console.log(checked)
-  // }, [checked])
 
   return (
     <div
-      className={`absolute left-0 top-12 w-full h-40 rounded-b-3xl shadow-xl bg-white font-inter
+      className={`absolute left-0 top-12 w-full h-20 rounded-b-3xl shadow-xl bg-white font-inter
       ${isFocus ? "block" : "hidden"}`}
     >
-      <div className="flex items-center w-full h-12 gap-5 px-2 border-y-[1px] border-gray-300">
+      <div className="flex items-center w-full h-12 gap-5 px-2 border-y-[1px] border-gray-300 overflow-x-auto scrollbar-hide">
         {data.map((text, i) => (
           <button
             onMouseDown={(e) => {
               e.preventDefault()
-              defocus(i)
+              buttonCheck(i)
             }}
             key={i}
-            className={`flex items-center justify-center h-8 gap-1 px-2 text-sm border-[1px] rounded-md border-black hover:bg-[#DDE3EC]`}
+            className={`shrink-0 flex items-center justify-center h-8 gap-1 px-2 text-sm rounded-md border-black
+            ${
+              checked[i]
+                ? "text-[#041e49] bg-[#9ec3ff] hover:bg-[#bbd5ff]"
+                : "bg-transparent hover:bg-[#DDE3EC] border-[1px]"
+            }`}
           >
             <IconCheck
-              className={`size-6 ${checked[i] ? "block" : "hidden"}`}
+              className={`size-5  
+              ${checked[i] ? "block fill-[#041e49]" : "hidden"}`}
             />
             {text}
           </button>
