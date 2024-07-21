@@ -11,7 +11,7 @@ function Search() {
       ${isFocus ? "bg-white shadow-xl rounded-t-3xl rounded-b-none" : ""}`}
     >
       <button className="shrink-0 flex items-center justify-center size-10 rounded-full hover:bg-[#DDE3EC]">
-        <IconSearch className="size-6 object-cover" />
+        <IconSearch className="size-6 fill-[#54585D] object-cover" />
       </button>
       <input
         type="text"
@@ -21,7 +21,7 @@ function Search() {
         onFocus={() => setIsFocus(true)}
       />
       <button className="shrink-0 flex items-center justify-center size-10 rounded-full hover:bg-[#DDE3EC]">
-        <IconInstantMix className="size-6 object-cover" />
+        <IconInstantMix className="size-6 fill-[#54585D] object-cover" />
       </button>
       <InputDropdown isFocus={isFocus} />
     </div>
