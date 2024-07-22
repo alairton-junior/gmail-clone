@@ -11,7 +11,7 @@ function Header({ toggleMenu, setToggleMenu }) {
           onClick={() => setToggleMenu(!toggleMenu)}
           className="flex items-center justify-center size-10 hover:bg-[#DDE3EC] rounded-full"
         >
-          <IconMenu className="fill-[#54585D] size-6" />
+          <IconMenu className="fill-[#54585D] size-6 "/>
         </button>
         <div className="flex items-center gap-3 cursor-pointer">
           <IconGmail className="w-[35px] h-[26px]" />
