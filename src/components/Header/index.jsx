@@ -5,7 +5,7 @@ import { IconMenu, IconGmail } from "../../assets/icons"
 
 function Header({ toggleMenu, setToggleMenu }) {
   return (
-    <header className="flex items-center w-full h-16 gap-20 px-6 font-inter text-[#54585D] bg-[#F5F7FB]">
+    <header className="flex items-center w-100% h-16 gap-20 px-6 font-inter text-[#54585D] bg-[#F5F7FB]">
       <div className="flex items-center h-full gap-6">
         <button
           onClick={() => setToggleMenu(!toggleMenu)}
