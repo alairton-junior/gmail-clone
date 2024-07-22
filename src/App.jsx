@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import MenuLateral from './components/SideBar/Menu/MenuLateral'
 import ComposeLateral from './components/SideBar/Compose/ComposeLateral'
 import 'tailwindcss/tailwind.css';
+import ContentMain from "./components/ContentMain";
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
             <ComposeLateral toggleMenu={toggleMenu} />
             <MenuLateral toggleMenu={toggleMenu} />
           </div>
-            {/* O resto do seu conteúdo principal */}
+            <ContentMain/>
         </div>
     </div>
 );
