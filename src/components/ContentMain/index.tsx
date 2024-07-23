@@ -16,8 +16,8 @@ function ContentMain() {
     return (
         <div className="bg-white flex-1 rounded-md p-2">
             <div className="flex flex-1 row justify-between p-4 items-center">
-                <div className="flex row items-center gap-2">
-                    <input type="checkbox" className="transform scale-150" onChange={() => setIsAllChecked(!isAllChecked)}/>
+                <div className="flex row items-center gap-2 z-0">
+                    <input type="checkbox" className="transform scale-150 z-0" onChange={() => setIsAllChecked(!isAllChecked)}/>
                     <IconRefresh className="w-[35px] h-[26px]"/>
                     <IconMoreVert className="w-[35px] h-[26px]"/>
                 </div>
