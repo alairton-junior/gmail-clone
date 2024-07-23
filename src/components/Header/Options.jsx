@@ -6,7 +6,7 @@ function Options() {
   const [toggleHelp, setToggleHelp] = useState(false)
 
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="flex items-center justify-center gap-2 z-10">
       <div className="relative">
         <button
           onClick={(e) => {

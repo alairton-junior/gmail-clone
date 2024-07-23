@@ -4,6 +4,7 @@ import MenuLateral from './components/SideBar/Menu/MenuLateral'
 import ComposeLateral from './components/SideBar/Compose/ComposeLateral'
 import 'tailwindcss/tailwind.css';
 import ContentMain from "./components/ContentMain";
+import SidebarRight from "./components/SidebarRight";
 
 
 function App() {
@@ -17,9 +18,11 @@ function App() {
             <MenuLateral toggleMenu={toggleMenu} />
           </div>
             <ContentMain/>
+            <SidebarRight />
         </div>
+        
     </div>
-);
+  )
 }
 
 export default App
