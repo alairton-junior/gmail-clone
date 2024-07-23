@@ -56,7 +56,7 @@ const handleMenuItemClick = (index) => {
 };
 
   return (
-    <div className={`h-screen bg-white ${toggleMenu ? 'w-20' : 'w-80'}`}>
+    <div className={`h-screen bg-white ${toggleMenu ? 'w-20' : 'w-[280px]'}`}>
         <div className='flex justify-between ml-9 mr-3'>
         {!toggleMenu && (
           <p className='text-xl font-medium'>Labels</p>

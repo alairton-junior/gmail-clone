@@ -17,10 +17,15 @@ function App() {
             <ComposeLateral toggleMenu={toggleMenu} />
             <MenuLateral toggleMenu={toggleMenu} />
           </div>
-            <ContentMain/>
-            <SidebarRight />
-        </div>
-        
+          <div className="flex w-full">
+            <div className="flex-grow w-full">
+              <ContentMain />
+            </div>
+            <div className="w-[67px]">
+              <SidebarRight />
+            </div>
+          </div>            
+        </div>      
     </div>
   )
 }

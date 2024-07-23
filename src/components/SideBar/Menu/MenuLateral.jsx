@@ -73,7 +73,7 @@ const MenuLateral = ({ toggleMenu }) => {
     };
 
   return (
-    <div className={`h-screen bg-white ${toggleMenu ? 'w-20' : 'w-80'}`}>
+    <div className={`h-screen bg-white ${toggleMenu ? 'w-20' : 'w-[280px]'}`}>
         {menuItems.map((item, index) => (
             <MenuItem
             key={index}
