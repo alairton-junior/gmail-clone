@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IconChevron, IconForum, IconInfo, IconMoreVert, IconRefresh } from '../../assets/icons';
 import IconInbox from '../../assets/icons/IconInbox';
 import IconPromotions from '../../assets/icons/IconPromotions';
@@ -8,11 +8,16 @@ import Message from './Message';
 
 
 function ContentMain() {
+
+
+    const [ isAllChecked, setIsAllChecked ] = useState(false);
+
+
     return (
         <div className="bg-white flex-1 rounded-md p-2">
             <div className="flex flex-1 row justify-between p-4 items-center">
                 <div className="flex row items-center gap-2">
-                    <input type="checkbox" className="transform scale-150"/>
+                    <input type="checkbox" className="transform scale-150" onChange={() => setIsAllChecked(!isAllChecked)}/>
                     <IconRefresh className="w-[35px] h-[26px]"/>
                     <IconMoreVert className="w-[35px] h-[26px]"/>
                 </div>
@@ -69,6 +74,7 @@ function ContentMain() {
                 {data.map((email) => {
                     return (
                         <Message
+                            isAllChecked={isAllChecked}
                             title={email.title}
                             description={email.description}
                             content={email.content}
